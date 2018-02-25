@@ -24,7 +24,7 @@ export class DataService {
   }
  
   loadfAll(){
-    this.http.get<Book[]>('/books/').subscribe(data => {
+    this.http.get<Book[]>('http://localhost:8000/books').subscribe(data => {
         this.dataStore.books = data;
         this._books.next(Object.assign({}, this.dataStore).books);
     }, error => {
@@ -32,7 +32,7 @@ export class DataService {
     })
   }
   addBook(newBook: Book): any {
-    var sub = this.http.post<Book>('/books/',newBook).share();
+    var sub = this.http.post<Book>('http://localhost:8000/books/',newBook).share();
     sub.subscribe(data => {
       this.dataStore.books.push(data);
       this._books.next(Object.assign({}, this.dataStore).books);
@@ -42,10 +42,10 @@ export class DataService {
     return sub;
   }
   getBook(id: number): Observable<Book> {
-    return this.http.get<Book>('/books/'+id);
+    return this.http.get<Book>('http://localhost:8000/books/'+id);
   }
   removeBook(id: number){
-    this.http.delete<Book>('/books/'+id).subscribe(data => {
+    this.http.delete<Book>('http://localhost:8000/books/'+id).subscribe(data => {
       var index = this.dataStore.books.findIndex(function(o){
         return o._id === id;
       })
