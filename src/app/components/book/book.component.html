@@ -1,0 +1,41 @@
+
+  <div class="book" [@fadeIn]="''">
+      <div class="form-group">
+        <label for="formGroupExampleInput">Title:</label>
+        <span>{{currentBook.title}}</span>
+        <!-- <input type="text" class="form-control"  [(ngModel)]="name" name="name"> -->
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Author:</label>
+        <span>{{currentBook.author}}</span>
+        <!-- <input type="text" class="form-control"[(ngModel)]="author" name="author"> -->
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Genre:</label>
+        <span>{{currentBook.genre}}</span>
+        <!-- <input type="text" class="form-control"[(ngModel)]="author" name="author"> -->
+      </div>
+     
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Description:</label>
+        <span>{{currentBook.description}}</span>
+        <!-- <textarea rows="4" cols="50" [(ngModel)]="description" name="description" > -->
+          <!-- </textarea> -->
+      </div>
+      
+      <div class="form-group">
+        <label for="formGroupExampleInput2">ISBN:</label>
+        <span>{{currentBook.isbn}}</span>
+        <!-- <input type="number" class="form-control" [(ngModel)]="isbn" name="isbn"> -->
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Publication Date:</label>
+        <span>{{currentBook.publication_date | date: 'dd/MM/yyyy'}}</span>
+        <!-- <input type="datetime-local" class="form-control" [(ngModel)]="date" name="date"> -->
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Price:</label>
+        <span>{{currentBook.price}}</span>
+        <!-- <input type="datetime-local" class="form-control" [(ngModel)]="date" name="date"> -->
+      </div>
+    </div>

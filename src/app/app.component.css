@@ -1,0 +1,14 @@
+/* app-book-modal{
+  position: absolute;
+  z-index: 3;
+  background: white;
+  margin-top: 250px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 10px solid black;
+  padding: 20px;
+} */
+h2 {
+    color: wheat;
+  }
+  

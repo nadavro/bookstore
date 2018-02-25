@@ -1,0 +1,60 @@
+
+<button class="myBtn text-center" (click)=OpenModal()>+</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal" [ngStyle]="{'display': flag == true ? 'block' : 'none' }">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+  <h1>Add new book</h1>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      <div class="form-group">
+        <label for="formGroupExampleInput">Title:</label>
+        <input type="text"  required class="form-control"  [(ngModel)]="title" name="title" #titletext="ngModel">
+        <div *ngIf="titletext.errors && (titletext.dirty || titletext.touched)" class="alert alert-danger">
+          <div [hidden]="!titletext.errors.required">
+            Book title is required!
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Description:</label>
+        <textarea rows="4" cols="50" [(ngModel)]="description" name="description" >
+          </textarea>
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Author:</label>
+        <input type="text" class="form-control"[(ngModel)]="author" name="author">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Genre:</label>
+        <select name="genre" [(ngModel)]="genre">
+          <option value="Science fiction">Science fiction</option>
+          <option value="Satire">Satire</option>
+          <option value="Drama">Drama</option>
+          <option value="Action">Action</option>
+          <option value="Romance">Romance</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Horror">Horror</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">ISBN:</label>
+        <input type="number" min="0" class="form-control" [(ngModel)]="isbn" name="isbn">
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Publicion Date:</label>
+        <input type="date" data-date=""  class="form-control" [(ngModel)]="date" name="date">
+      </div>
+      
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Price:</label>
+        <input type="number" data-date="" min="0" class="form-control" [(ngModel)]="price" name="price">
+      </div>
+    
+      <button>Submit</button>
+      <button type="button" (click)="closeModal()">cancel</button>
+    </form>
+  </div>
+
+</div>

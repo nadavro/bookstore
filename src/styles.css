@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Lato,sans-serif!important;
+    background: url(https://images2.alphacoders.com/261/thumb-1920-26102.jpg) no-repeat 50% fixed;
+    background-size: cover;
+}

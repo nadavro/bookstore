@@ -1,0 +1,17 @@
+<app-book-modal ></app-book-modal>
+<div class="booklist" [@fadeIn]="''" *ngIf="books && books.length">
+<div class="RecipeItem clearfix" *ngFor="let book of books" >
+  <div class="col-sm-10 RecipeItem__content" (click)="navigateToBook(book._id)">
+    <h4>{{book.title}}</h4>
+    <p class="small">By: {{book.author}}</p>
+    <p>{{book.description}}</p>
+    
+  </div>
+  <div class="col-sm-1 RecipeItem__control">
+
+   
+    <span (click)="removeBook(book._id)" class="glyphicon glyphicon-remove">
+    </span>
+  </div>
+</div>
+</div>
