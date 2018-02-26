@@ -7,7 +7,7 @@ const path = require('path');
 var app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect('mongodb://nadavrozen:nadavrozen@ds147668.mlab.com:47668/books')
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
